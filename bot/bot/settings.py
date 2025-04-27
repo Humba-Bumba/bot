@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'bot_db',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'pg_db',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }

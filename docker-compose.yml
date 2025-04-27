@@ -30,13 +30,13 @@ services:
     depends_on:
       - pg_db
 
-  web:
-    build: .
-    command: python bot/manage.py runserver 0.0.0.0:8000
-    ports:
-      - "8000:8000"
-    networks:
-      - bot
+#  web:
+#    build: .
+#    command: python bot/manage.py runserver 0.0.0.0:8000
+#    ports:
+#      - "8000:8000"
+#    networks:
+#      - bot
 
 volumes:
   db:
