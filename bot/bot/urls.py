@@ -18,14 +18,17 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
 
-from subscriptions.views import TariffView, UserSubscriptionView
+from subscriptions.views import TariffView, UserSubscriptionView, CustomUserView, RegisterUserView
 from products.views import OrderView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/register/', RegisterUserView.as_view())
 ]
 router = routers.DefaultRouter()
 router.register(r'api/tariff', TariffView)
 router.register(r'api/user_subscription', UserSubscriptionView)
 router.register(r'api/order', OrderView)
+router.register(r'api/custom_user', CustomUserView)
+
 urlpatterns += router.urls

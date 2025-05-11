@@ -11,7 +11,7 @@ class SubscriptionsMiddleware:
 
     def __call__(self, request):
         path = request.path
-        if path.startswith('/api/orders'):
+        if path.startswith('/api/order'):
             if not request.user.is_authenticated:
                 return JsonResponse({'detail': 'Authentication required.'}, status=401)
             try:

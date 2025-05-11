@@ -13,6 +13,7 @@ class Tariff(models.Model):
 
 class CustomUser(AbstractUser):
     phone = models.CharField(max_length=20, blank=True)
+    telegram_id = models.CharField(max_length=20, blank=True)
 
 
 class UserSubscription(models.Model):

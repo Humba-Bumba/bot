@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'bot_db',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'localhost',
+        'HOST': 'pg_db',
         'PORT': '5432',
     }
 }
@@ -145,3 +145,4 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'subscriptions.CustomUser'
+TELEGRAM_BOT_TOKEN = ''
