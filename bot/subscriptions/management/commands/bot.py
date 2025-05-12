@@ -1,5 +1,4 @@
 import asyncio
-import os
 
 from django.conf import settings
 from django.core.management.base import BaseCommand
@@ -7,7 +6,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from telegram import Update
 from sqlalchemy import create_engine, MetaData, select, update
 
-DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://postgres:postgres@pg_db:5432/bot_db")
+DATABASE_URL = "postgresql://postgres:postgres@pg_db:5432/bot_db"
 
 engine = create_engine(DATABASE_URL)
 metadata = MetaData()
@@ -43,7 +42,6 @@ async def start(update_tg: Update, context: ContextTypes.DEFAULT_TYPE):
             await update_tg.message.reply_text("Пользователь с таким номером телефона не найден.")
 
 class Command(BaseCommand):
-    help = 'Запуск Telegram-бота'
 
     def handle(self, *args, **kwargs):
         loop = asyncio.get_event_loop()
