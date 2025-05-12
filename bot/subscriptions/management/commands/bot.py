@@ -14,7 +14,7 @@ metadata.reflect(bind=engine)
 custom_user_table = metadata.tables["subscriptions_customuser"]
 
 
-async def start(update_tg: Update, context: ContextTypes.DEFAULT_TYPE):
+async def start(update_tg: Update):
     telegram_id = update_tg.effective_user.id
     message_text = update_tg.message.text.strip()
     args = message_text.split()
