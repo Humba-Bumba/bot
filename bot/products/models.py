@@ -13,23 +13,3 @@ class Order(models.Model):
 
     def __str__(self):
         return f"{self.product_name} x {self.quantity} для {self.user.username}"
-
-
-# @receiver(post_save, sender=Order)
-# def send_telegram_notification(sender, instance, created, **kwargs):
-#     if created:
-#         telegram_id = getattr(instance.user, 'telegram_id', None)
-#         if telegram_id:
-#             token = settings.TELEGRAM_BOT_TOKEN
-#             if not token:
-#                 print("TELEGRAM_BOT_TOKEN не задан")
-#                 return
-#             url = f"https://api.telegram.org/bot{token}/sendMessage"
-#             message = "Вам пришёл новый заказ!"
-#             try:
-#                 requests.post(url, data={
-#                     "chat_id": telegram_id,
-#                     "text": message
-#                 })
-#             except requests.RequestException as e:
-#                 print(f"Ошибка отправки уведомления в Telegram: {e}")
